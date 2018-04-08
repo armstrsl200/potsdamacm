@@ -5,8 +5,10 @@
   --black: #272727;
   --yellow: #ffc600;
   --green: hsla(100, 100%, 45%, 1);
-  --officialred: rgba(220, 30, 30, 1);
-  --offwhitewarm: hsl(22, 60%, 98%);
+  --officialred: hsl(0, 76%, 40%);
+  /* this red is brighter vvv */
+  /* --officialred: rgba(220, 30, 30, 1); */
+  --offwhitewarm: hsl(22, 60%, 99%);
 }
 
 html {
@@ -50,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ========== HEADER ============ */
 
-.header {
+header {
   grid-area: h;
   display: grid;
   grid-gap: 50px;
@@ -67,20 +69,20 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-.header .title {
-  grid-column: 1 / span 2;
+header .title {
+  grid-column: 1 / span 3;
   text-align: left;
   padding-bottom: 0;
 }
 
-.header .about { grid-column: -4 / span 1; }
+header .about { grid-column: -4 / span 1; }
 
-.header .org { grid-column: -3 / span 1; }
+header .org { grid-column: -3 / span 1; }
 
-.header .blog { grid-column: -2 / span 1; }
+header .blog { grid-column: -2 / span 1; }
 
-.header a,
-.header a:visited {
+header a,
+header a:visited {
     background-color: default;
     transition: color 0.2s ease;
     transition-duration: 0.2s;
@@ -90,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
-.header a:hover {
+header a:hover {
     color: var(--green);
     text-shadow: 0 0 0 #000;
     position: relative;
@@ -98,9 +100,17 @@ h1, h2, h3, h4, h5, h6 {
     left: 2px;
 }
 
+.current-page {
+  color: var(--green) !important;
+  text-shadow: none;
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
 
 /* ========== CONTENT ============ */
-#content-con {
+#content {
   grid-area: c;
   border: none;
   padding: 0;
@@ -125,9 +135,20 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
+.textarea {
+  width: 80%;
+  /* border: 1px solid black; */
+  margin: 0 auto;
+  font-family: Roboto;
+  text-align: left;
+  font-size: 20px;
+  max-width: 1200px;
+  letter-spacing: normal;
+}
+
 /* home home home home home home home home home home home home */
 #bender_welcome {
-  background-image: url('../images/bender_dark.png');
+  background-image: url('/assets/images/bender_dark.png');
   background-attachment: fixed;
   background-size: cover;
   background-position: left;
@@ -221,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ========== FOOTER ============ */
 
-.footer {
+footer {
   grid-area: f;
   display: grid;
   grid-template-columns: 1fr;
@@ -235,23 +256,23 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 20px
 }
 
-.footer .icons {
+footer .icons {
   margin: 0 10px;
   text-decoration: none;
 }
 
-.footer .icons .fa {
+footer .icons .fa {
   padding: 0 5px;
   font-size: 32px;
   color: hsl(215, 100%, 0%);
 }
 
-.footer .icons .fa:hover {
+footer .icons .fa:hover {
   color: var(--red);
-  font-size: 44px;
+  font-size: 36px;
 }
 
-.footer .meetings {
+footer .meetings {
   font-size: 12px;
   text-align: left;
 }
