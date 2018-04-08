@@ -6,7 +6,7 @@
   --yellow: #ffc600;
   --green: hsla(100, 100%, 45%, 1);
   --officialred: rgba(220, 30, 30, 1);
-  --offwhitewarm: hsl(22, 60%, 95%);
+  --offwhitewarm: hsl(22, 60%, 98%);
 }
 
 html {
@@ -40,7 +40,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   /* 116px hardcoded as headers max size. ... yup. */
-  grid-template-rows: minmax(auto, 116px) auto minmax(auto, 150px);
+  grid-template-rows: minmax(auto, 100px) auto minmax(auto, 75px);
   grid-template-areas: "h" "c" "f";
 }
 
@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-template-rows: 1fr;
   border: none;
-  padding: 30px 20px 0 20px;
+  padding: 30px 20px 0 15px;
   background: var(--officialred);
   justify-content: center;
   align-items: center;
@@ -70,13 +70,14 @@ h1, h2, h3, h4, h5, h6 {
 .header .title {
   grid-column: 1 / span 2;
   text-align: left;
+  padding-bottom: 0;
 }
 
-.header .home { grid-column: -4 / span 1; }
+.header .about { grid-column: -4 / span 1; }
 
-.header .events { grid-column: -3 / span 1; }
+.header .org { grid-column: -3 / span 1; }
 
-.header .eboard { grid-column: -2 / span 1; }
+.header .blog { grid-column: -2 / span 1; }
 
 .header a,
 .header a:visited {
@@ -224,20 +225,14 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: f;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 0 20px;
   border: none;
-  background: hsla(360, 0%, 80%, 1);
+  background: hsla(360, 0.05%, 85%, 1);
   margin-top: 20px
-}
-
-.footer .meetings {
-  font-size: 12px;
-  grid-column: 1 / -1;
-  text-align: left;
 }
 
 .footer .icons {
@@ -246,12 +241,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer .icons .fa {
-    padding: 0 5px;
-    font-size: 32px;
-    color: hsl(215, 100%, 0%);
+  padding: 0 5px;
+  font-size: 32px;
+  color: hsl(215, 100%, 0%);
 }
 
 .footer .icons .fa:hover {
-    color: var(--officialred);
-    font-size: 44px;
+  color: var(--red);
+  font-size: 44px;
+}
+
+.footer .meetings {
+  font-size: 12px;
+  text-align: left;
 }
