@@ -1,0 +1,297 @@
+:root {
+  --yellow: #ffc600;
+  --black: #272727;
+  --yellowdarker: hsla(100, 100%, 45%, 1);
+  --officialred: rgba(220, 30, 30, 1);
+}
+
+html {
+  /*
+    border-box box model allows us to add padding and border to our elements
+    without increasing their size
+  */
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 10px;
+  color: var(--black);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  we inherit box-sizing: border-box; from our <html> selector
+  applying box-sizing: border-box; to everything
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  /* background-color: rgba(300, 180,180, 0.2); */
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='60' stroke-opacity='0' %3E%3Ccircle fill='%23ff9d00' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fb8d17' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f47d24' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23ed6e2d' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23e35f34' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d85239' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23cc453e' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23be3941' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23b02f43' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23a02644' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23901e44' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23801843' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%236f1341' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%235e0f3d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%234e0c38' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%233e0933' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%232e062c' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center; */
+  background-color: white;
+  min-height: calc(100vh - 100px);
+  letter-spacing: -1px;
+  /* background: #ff8686; */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 5px 0;
+}
+
+.item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  font-size: 35px;
+}
+
+.item p {
+  margin: 0 0 5px 0;
+}
+
+/* === End Default Styling ============ */
+
+.body {
+  display: grid;
+  /* grid-gap: 20px; */
+  grid-template-columns: 1fr;
+  grid-template-areas:  "h"
+                        "c"
+                        "f";
+  margin: 0;
+}
+
+/* ========== HEADER ============ */
+
+.header {
+  /* gird */
+  grid-area: h;
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-rows: 1fr;
+  /* display */
+  border: none;
+  /* border-radius: 3px; */
+  /* border: 5px solid rgba(0, 0, 0, 0.5); */
+  padding: 30px 20px 0 20px;
+  /* background: rgba(100, 50, 25, 0.5); */
+  background: var(--officialred);
+  /* text formatting */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+.header p {
+  grid-column: 1 / span 2;
+  text-align: left;
+}
+
+.header .home {
+  grid-column: -4 / span 1;
+}
+
+.header .events {
+  grid-column: -3 / span 1;
+}
+
+.header .eboard {
+  grid-column: -2 / span 1;
+}
+
+.header a,
+.header a:visited {
+    /* border: solid 1px red; */
+    background-color: default;
+    transition: color 0.2s ease;
+    /* background-color cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s; */
+
+    /* text-decoration-color cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s, */
+
+    /* border-bottom-color ease-in-out 0.25s; */
+    transition-duration: 0.2s;
+    transition-property: color;
+    text-shadow: 2px 2px 1px #555;
+    color: hsl(25, 80%, 95%);
+    text-decoration: none;
+}
+
+.header a:hover {
+    color: var(--yellowdarker);
+    text-shadow: 0 0 0 #000;
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+
+/* ========== CONTENT ============ */
+
+.content {
+  grid-area: c;
+  display: grid;
+  /* grid-gap: 50px; */
+  grid-template-columns: 1fr;
+  /* grid-template-rows: repeat(8, 1fr); */
+  /* grid-template-areas:
+    "1" "2" "3" "4" "5" "6" "7" "8"; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px 0px 50px 0px;
+  /* background: hsla(0, 0%, 100%, 1); */
+  border: none;
+  padding: 0;
+}
+
+#randompic {
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='60' stroke-opacity='0' %3E%3Ccircle fill='%23ff9d00' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fb8d17' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f47d24' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23ed6e2d' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23e35f34' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d85239' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23cc453e' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23be3941' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23b02f43' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23a02644' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23901e44' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23801843' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%236f1341' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%235e0f3d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%234e0c38' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%233e0933' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%232e062c' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E"); */
+  background-image: url('../images/bender_dark.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: left;
+  padding: 0;
+  margin: 0;
+  border-radius: 0px;
+}
+
+#welcomecard {
+  color: white;
+  padding: 50px;
+  background: hsla(50, 100%, 100%, 0.08);
+}
+
+#welcomecard h2 {
+  color: white;
+  /* SIMULATES TEXT STROKE */
+  /* doesn't work well on light backgrounds */
+  /* the BETTER alternative is to add wordart as an SVG */
+  /* but I'm lazy! :x */
+  text-shadow:
+    4px 4px 0 #000,
+    4px -4px 0 #000,
+    -4px 4px 0 #000,
+    -4px -4px 0 #000;
+}
+
+#welcomecard h5 {
+  color: white;
+  /* SIMULATES TEXT STROKE */
+  /* doesn't work well on light backgrounds */
+  /* the BETTER alternative is to add wordart as an SVG */
+  /* but I'm lazy! :x */
+  text-shadow:
+    2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    -2px -2px 0 #000;
+  margin: 10px 0 0 0;
+}
+
+
+.infoarea {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  /* border: 5px solid rgba(0, 0, 0, 0.5); */
+  /* border: 5px dotted black; */
+  border-radius: 3px;
+  font-size: 35px;
+}
+
+.eboardarea {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-width: 700px;
+  border: 5px solid var(--black);
+  border-radius: 3px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 4fr 4fr;
+  grid-gap: 20px;
+  padding: 0 20px 20px;
+}
+
+.eboardarea h5 {
+  grid-column: 1 / -1;
+}
+
+.person {
+  display: grid;
+  grid-column: 1fr;
+  grid-row: auto;
+  font-weight: normal;
+  font-size: 20px;
+  background: #f0dce5;
+  height: 200px;
+}
+
+.person .person__role {
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.person .person__name {
+  padding: 0;
+  margin: 0;
+}
+
+/* ========== FOOTER ============ */
+
+.footer {
+  grid-area: f;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  /* display */
+  border: none;
+  /* border-radius: 3px; */
+  /* border: 5px solid rgba(0, 0, 0, 0.5); */
+  /* background: rgba(100, 50, 25, 0.5); */
+  background: hsla(360, 0%, 80%, 1);
+  margin-top: 20px
+}
+
+.footer .meetings {
+  font-size: 12px;
+  grid-column: 1 / -1;
+  text-align: left;
+}
+
+.footer .icons {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer .icons .fa {
+    padding: 0 5px;
+    font-size: 32px;
+    color: hsl(215, 100%, 0%);
+}
+
+.footer .icons .fa:hover {
+    color: var(--officialred);
+    font-size: 44px;
+}
