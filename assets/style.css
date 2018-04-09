@@ -261,6 +261,15 @@ header a:hover {
   font-size: .8em;
 }
 
+/* about about about about about about about about about */
+.half-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  grid-column-gap: 20px;
+}
+
+
 /* BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG */
 /* #postlist {
   letter-spacing: normal;
