@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 header {
   grid-area: h;
   display: grid;
-  grid-gap: 50px;
+  grid-gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-template-rows: 1fr;
   border: none;
@@ -75,11 +75,10 @@ header .title {
   padding-bottom: 0;
 }
 
-header .about { grid-column: -4 / span 1; }
-
-header .org { grid-column: -3 / span 1; }
-
-header .blog { grid-column: -2 / span 1; }
+header .last { grid-column: -2 / span 1; }
+header .second-to-last { grid-column: -3 / span 1; }
+header .third-to-last { grid-column: -4 / span 1; }
+header .fourth-to-last { grid-column: -5 / span 1; }
 
 header a,
 header a:visited {
@@ -268,7 +267,6 @@ header a:hover {
   justify-content: space-around;
   grid-column-gap: 20px;
 }
-
 
 /* BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG */
 /* #postlist {
