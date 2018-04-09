@@ -9,14 +9,13 @@
 
 ## To do
 - add content
-  + about
-  + org
   + events
-  + donate
   + join
   + ACM-w
-- styling
   + about
+  + org
+  + donate
+- styling
   + events
   + acm-w
   + blog
