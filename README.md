@@ -8,21 +8,23 @@
 1. do the thing! \o/
 
 ## To do
-- add content
+- edit/add content
   + events
   + join
   + ACM-w
-  + about
   + org
   + donate
+  + footer icons
 - styling
   + events
-  + acm-w
   + blog
+- put the Hack Potsdam website up somewhere
 
 ## Issues:
-#### everything
-this started as "oh lets learn grid" to "its so cute lets play with styling" to "the website should be so easy to make now" to "lets migrate it to use jekyll" to "oh dear god what have I done"
+#### no responsive design
+To do
++ navbar turns into menu button with media query
++ check all individual pages
 
-#### eboard
+#### eboard styling
 styling breaks on Chrome. Not a big deal, it's all filler for now.

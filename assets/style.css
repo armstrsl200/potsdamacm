@@ -3,12 +3,15 @@
 
 :root {
   --black: #272727;
-  --yellow: #ffc600;
+  /* --yellow: #ffc600; */
+  --yellow: hsla(47, 100%, 50%, 1.0);
+  --yellowlight: hsla(40, 10%, 95%, 0,5);
   --green: hsla(100, 100%, 45%, 1);
   --officialred: hsl(0, 76%, 40%);
   /* this red is brighter vvv */
   /* --officialred: rgba(220, 30, 30, 1); */
   --offwhitewarm: hsl(22, 60%, 99%);
+  --lightblue: hsl(200, 67%, 55%);
 }
 
 html {
@@ -65,7 +68,7 @@ header {
   align-items: center;
   text-align: center;
   font-weight: 900;
-  font-size: 35px;
+  font-size: 32px;
   color: white;
 }
 
@@ -74,11 +77,6 @@ header .title {
   text-align: left;
   padding-bottom: 0;
 }
-
-header .last { grid-column: -2 / span 1; }
-header .second-to-last { grid-column: -3 / span 1; }
-header .third-to-last { grid-column: -4 / span 1; }
-header .fourth-to-last { grid-column: -5 / span 1; }
 
 header a,
 header a:visited {
@@ -116,7 +114,7 @@ header a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 35px;
+  font-size: 28px;
 }
 
 /* grid with 1 column */
@@ -177,10 +175,6 @@ header a:hover {
 
 #welcomecard h5 {
   color: white;
-  /* SIMULATES TEXT STROKE */
-  /* doesn't work well on light backgrounds */
-  /* the BETTER alternative is to add wordart as an SVG */
-  /* but I'm lazy! :x */
   text-shadow:
     2px 2px 0 #000,
     2px -2px 0 #000,
@@ -189,9 +183,47 @@ header a:hover {
   margin: 10px 0 0 0;
 }
 
+#joinslack {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('/assets/images/hackpotsdamlite_wide.jpg');
+  /* background-image: url('/assets/images/hackupstate.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0px;
+}
+
+#slackcard {
+  color: white;
+  /* background: hsla(50, 100%, 100%, 0.08); */
+}
+
+#slackcard h2,
+#slackcard p {
+  color: white;
+  padding: 0px;
+  background: hsla(0, 0%, 0%, 0.05);
+  color: white;
+  margin: 10px 0 0 0;
+  text-shadow:
+    1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    -1px -1px 0 #000;
+    background: hsla(50, 100%, 0%, 0.3);
+}
+
+#slackcard h2 {
+  text-shadow:
+    2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    -2px -2px 0 #000;
+    background: none;
+}
+
 /* org org org org org org org org org org org org org org org */
-/* first row is h5 only (which may be removed?) */
-/* second two rows just badges */
 .eboardarea {
   justify-content: center;
   align-items: center;
@@ -219,7 +251,7 @@ header a:hover {
   grid-row: 1fr 1fr 4fr;
   font-weight: normal;
   font-size: 20px;
-  background: #f0dce5;
+  background: hsl(333, 40%, 95%);
   height: 200px;
 }
 
@@ -268,6 +300,37 @@ header a:hover {
   grid-column-gap: 20px;
 }
 
+/* ACMW ACMW ACMW ACMW ACMW ACMW ACMW */
+.acm-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.acm-cards .card {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 200px;
+  height: 150px;
+  background-color: var(--lightblue);
+  color: white;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.acm-cards .card h2 {
+  align-self: end;
+}
+
+.acm-cards .card h3,
+.acm-cards .card h4, {
+  align-self: start;
+}
+
 /* BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG */
 /* #postlist {
   letter-spacing: normal;
@@ -285,10 +348,9 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   border: none;
-  background: hsla(360, 0.05%, 85%, 1);
-  margin-top: 20px
+  background: hsla(360, 0.05%, 75%, 1);
 }
 
 footer .icons {
@@ -297,14 +359,14 @@ footer .icons {
 }
 
 footer .icons .fa {
-  padding: 0 5px;
-  font-size: 32px;
+  padding: 0 8px;
+  font-size: 40px;
   color: hsl(215, 100%, 0%);
 }
 
 footer .icons .fa:hover {
-  color: var(--red);
-  font-size: 36px;
+  color: white;
+  /* font-size: 36px; */
 }
 
 footer .meetings {
