@@ -245,19 +245,50 @@ header a:hover {
   font-style: normal;
 }
 
-.person {
+/* .person {
   display: grid;
   grid-column: 1fr;
-  grid-row: 1fr 1fr 4fr;
+  grid-row: 1fr 1fr 100px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   font-weight: normal;
   font-size: 20px;
   background: hsl(333, 40%, 95%);
   height: 200px;
+  width: 200px;
+  grid-gap: 0;
+} */
+
+.person {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  /* background: hsl(333, 40%, 95%); */
+  border-radius: 15%;
+  /* background: none; */
+  max-height: 200px;
+  max-width: 200px;
 }
 
-.person .person__role {
+.person img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+/* .person > .titles {
+  display: inline-block;
+} */
+
+/* .person .person__role {
   padding: 0;
-  margin: 0;
+  margin: 15px 0 0;
   font-weight: bold;
 }
 
@@ -265,7 +296,8 @@ header a:hover {
   padding: 0;
   margin: 0;
   font-size: 1.1em;
-}
+} */
+
 
 .eboardarea .acmw {
   grid-column: 1;
